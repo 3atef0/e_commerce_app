@@ -91,6 +91,13 @@ class HomeScreen extends StatelessWidget {
         itemCount: products.length,
         itemBuilder: (context, index) {
           final product = products[index];
+
+          // تقصير اسم المنتج إلى 30 حرفًا كحد أقصى
+          String productName = product.name ?? 'No Name';
+          if (productName.length > 30) {
+            productName = productName.substring(0, 30) + "...";
+          }
+
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -116,9 +123,12 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          product.name ?? 'No Name',
+                          productName,
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
+                          maxLines: 1,
+                          overflow: TextOverflow
+                              .ellipsis, // إضافة النقاط في حال زاد الطول
                         ),
                         Text(
                           '${product.price ?? 0} EGP',
