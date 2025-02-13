@@ -10,7 +10,6 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(product.name ?? 'Product Details')),
       body: SingleChildScrollView(
-        // جعل الصفحة قابلة للتمرير
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(

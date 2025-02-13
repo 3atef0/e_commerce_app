@@ -26,7 +26,6 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 10),
 
-                  // ====== Banner (Carousel) ======
                   CarouselSlider(
                     options: CarouselOptions(
                       height: 200,
@@ -66,6 +65,8 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         var category = state.categoriesModel.categories[index];
                         return CategoryCircle(
+                          name: category.name,
+                          id: category.id,
                           img: category.image,
                           text: category.name,
                         );
