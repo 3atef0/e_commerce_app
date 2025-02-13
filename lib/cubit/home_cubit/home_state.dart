@@ -1,17 +1,19 @@
+import 'package:ecommerce_app/model/api_categorie.dart';
 import 'package:ecommerce_app/model/api_home.dart';
 
 abstract class HomeState {}
 
-class HomeStateInitial extends HomeState {}
+class HomeInitial extends HomeState {}
 
-class HomeStateLoading extends HomeState {}
+class HomeLoadingState extends HomeState {}
 
-class HomeStateSuccessful extends HomeState {
+class HomeSuccessState extends HomeState {
   final HomeModel homeModel;
-  HomeStateSuccessful(this.homeModel);
+  final CategoriesModel2 categoriesModel;
+  HomeSuccessState(this.homeModel, this.categoriesModel);
 }
 
-class HomeStateError extends HomeState {
-  final String errorMessage;
-  HomeStateError({required this.errorMessage});
+class HomeErrorState extends HomeState {
+  final String error;
+  HomeErrorState(this.error);
 }

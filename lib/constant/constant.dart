@@ -4,6 +4,7 @@ class ApiConstants {
   static var register = "$basUrl/register";
   static var home = "$basUrl/home";
   static var profile = "$basUrl/profile";
+  static var categorie = "$basUrl/categories";
 }
 
 class DataIconCategories {
